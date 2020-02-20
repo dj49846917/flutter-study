@@ -370,3 +370,29 @@
 
   4. [详细文档请看:/flutter/09Stack层叠组件/Stack层叠组件-Stack与Align、Stack与Positioned实现定位布局.pdf](/flutter/09Stack层叠组件/Stack层叠组件-Stack与Align、Stack与Positioned实现定位布局.pdf)
 
+## 11. AspectRatio宽高比组件与Card组件
+  1. AspectRatio宽高比组件，相对于父元素
+     * [详细代码请看:/flutter/10AspectRatio宽高比组件与Card组件/AspectRatio.dart](/flutter/10AspectRatio宽高比组件与Card组件/AspectRatio.dart)
+
+  2. Card组件
+     * [详细代码请看:/flutter/10AspectRatio宽高比组件与Card组件/Card.dart](/flutter/10AspectRatio宽高比组件与Card组件/Card.dart)
+     
+  3. 练习
+     * 实现以下布局: ![练习1](/flutter/10AspectRatio宽高比组件与Card组件/2.jpg)
+       * [详细代码请看:/flutter/10AspectRatio宽高比组件与Card组件/test.dart](/flutter/10AspectRatio宽高比组件与Card组件/test.dart)
+
+  4. [详细文档请看:/flutter/10AspectRatio宽高比组件与Card组件/Flutter-AspectRatio、Card卡片组件.pdf](/flutter/10AspectRatio宽高比组件与Card组件/Flutter-AspectRatio、Card卡片组件.pdf)
+
+## 12. Wrap组件，超过一行之后，自动换行
+  1. 横轴的换行
+     * [详细代码请看:/flutter/11Wrap组件/WrapDemo.dart](/flutter/11Wrap组件/WrapDemo.dart)
+
+  2. 纵轴的换行
+     * [详细代码请看:/flutter/11Wrap组件/WrapDemo2.dart](/flutter/11Wrap组件/WrapDemo2.dart)
+
+  3. [详细文档请看:/flutter/11Wrap组件/Flutter页面布局Wrap组件.pdf](/flutter/11Wrap组件/Flutter页面布局Wrap组件.pdf)
+
+## 13. 有状态组件，页面改变数据
+  * [详细代码请看:/flutter/12有状态组件,页面改变数据/demo1.dart](/flutter/12有状态组件,页面改变数据/demo1.dart)
+
+  * [详细代码请看:/flutter/12有状态组件,页面改变数据/demo2.dart](/flutter/12有状态组件,页面改变数据/demo2.dart)
