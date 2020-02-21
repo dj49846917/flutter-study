@@ -396,3 +396,49 @@
   * [详细代码请看:/flutter/12有状态组件,页面改变数据/demo1.dart](/flutter/12有状态组件,页面改变数据/demo1.dart)
 
   * [详细代码请看:/flutter/12有状态组件,页面改变数据/demo2.dart](/flutter/12有状态组件,页面改变数据/demo2.dart)
+
+## 14. BottomNavigationBar底部导航栏
+  1. [详细代码请看:/flutter/13BottomNavigationBar底部导航栏/demo.dart](/flutter/13BottomNavigationBar底部导航栏/demo.dart)
+
+  2. [详细文档请看:/flutter/13BottomNavigationBar底部导航栏/BottomNavigationBar-自定义底部导航条、以及实现页面切换.pdf](/flutter/13BottomNavigationBar底部导航栏/BottomNavigationBar-自定义底部导航条、以及实现页面切换.pdf)
+
+## 15. 路由、路由跳转、路由跳转传值
+  1. 路由跳转，使用Navigator.push
+     * [详细代码请看:/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/路由跳转/home.dart](/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/路由跳转/home.dart)
+
+  2. 路由传值
+     * [详细代码请看:/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/路由跳转传值/home.dart](/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/路由跳转传值/home.dart)
+
+  3. 命名路由跳转,使用Navigator.pushNamed
+     * [详细代码请看:/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/命名路由跳转/main.dart](/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/命名路由跳转/main.dart)
+
+  4. 命名路由跳转传值,使用onGenerateRoute
+     * [详细代码请看:/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/命名路由跳转传值/main.dart](/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/命名路由跳转传值/main.dart)
+
+  5. 在命名路由跳转传值基础上进行封装，抽离路由。production.dart包含有状态组件的传值
+     * [详细代码请看:/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/命名路由封装/main.dart](/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/命名路由封装/main.dart)
+
+  6. [详细文档请看:/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/Flutter中的普通路由、普通路由传值、命名路由、命名路由传值.pdf](/flutter/14路由、路由跳转、路由跳转传值、命名路由、命名路由传值/Flutter中的普通路由、普通路由传值、命名路由、命名路由传值.pdf)
+
+## 16. 替换路由
+  1. 使用Navigator.pushNamed这种跳转，返回的时候只能返回上一级
+     * [详细代码请看:/flutter/15替换路由/普通路由返回上一级/main.dart](/flutter/15替换路由/普通路由返回上一级/main.dart)
+
+  2. 使用Navigator.pushReplacementNamed跳转，可以返回到第一级
+     * [详细代码请看:/flutter/15替换路由/替换路由/main.dart](/flutter/15替换路由/替换路由/main.dart)
+
+  3. 普通路由跳转，返回到第一级，使用Navigator.pushAndRemoveUntil
+     * [详细代码请看:/flutter/15替换路由/普通路由返回到根目录/main.dart](/flutter/15替换路由/普通路由返回到根目录/main.dart)
+
+  4. 普通路由跳转，返回到指定目录
+     * [详细代码请看:/flutter/15替换路由/普通路由返回到指定目录/main.dart](/flutter/15替换路由/普通路由返回到指定目录/main.dart)
+
+## 17. 自定义头部导航栏
+  1. 设置导航栏的文字，图标
+     * [详细代码请看:/flutter/16自定义头部导航栏/demo.dart](/flutter/16自定义头部导航栏/demo.dart)
+
+  2. 顶部导航栏设置选项卡
+     * [详细代码请看:/flutter/16自定义头部导航栏/导航栏选项卡.dart](/flutter/16自定义头部导航栏/导航栏选项卡.dart)
+
+  3. 有底部导航栏的时候增加顶部选项卡
+     * [详细代码请看:/flutter/16自定义头部导航栏/有底部导航栏的时候增加顶部选项卡/main.dart](/flutter/16自定义头部导航栏/有底部导航栏的时候增加顶部选项卡/main.dart)
