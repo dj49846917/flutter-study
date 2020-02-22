@@ -433,6 +433,8 @@
   4. 普通路由跳转，返回到指定目录
      * [详细代码请看:/flutter/15替换路由/普通路由返回到指定目录/main.dart](/flutter/15替换路由/普通路由返回到指定目录/main.dart)
 
+  5. [详细文档请看:/flutter/15替换路由/Flutter中的路由-pushReplacementNamed路由替换、pushNamedAndRemoveUntil返回到根路由.pdf](/flutter/15替换路由/Flutter中的路由-pushReplacementNamed路由替换、pushNamedAndRemoveUntil返回到根路由.pdf)
+
 ## 17. 自定义头部导航栏
   1. 设置导航栏的文字，图标
      * [详细代码请看:/flutter/16自定义头部导航栏/demo.dart](/flutter/16自定义头部导航栏/demo.dart)
@@ -440,5 +442,238 @@
   2. 顶部导航栏设置选项卡
      * [详细代码请看:/flutter/16自定义头部导航栏/导航栏选项卡.dart](/flutter/16自定义头部导航栏/导航栏选项卡.dart)
 
+     * 使用tabController的好处是，可以给选项卡添加事件 [详细代码请看:/flutter/16自定义头部导航栏/导航栏选项卡2.dart](/flutter/16自定义头部导航栏/导航栏选项卡2.dart)
+
   3. 有底部导航栏的时候增加顶部选项卡
      * [详细代码请看:/flutter/16自定义头部导航栏/有底部导航栏的时候增加顶部选项卡/main.dart](/flutter/16自定义头部导航栏/有底部导航栏的时候增加顶部选项卡/main.dart)
+
+  4. 使用tabController渲染顶部导航栏，使用tabController的好处是，可以给选项卡添加事件
+     * [详细代码请看:/flutter/16自定义头部导航栏/使用tabController渲染顶部导航栏/main.dart](/flutter/16自定义头部导航栏/使用tabController渲染顶部导航栏/main.dart)
+
+  5. [详细文档请看:/flutter/16自定义头部导航栏/Flutter-AppBar自定义顶部导航按钮、图标颜色以及TabBar定义顶部Tab切换.pdf](/flutter/16自定义头部导航栏/Flutter-AppBar自定义顶部导航按钮、图标颜色以及TabBar定义顶部Tab切换.pdf)
+
+## 18. Draw抽屉组件
+  1. DrawHeader抽屉头部自定义组件
+     * [详细代码请看:/flutter/17Draw抽屉组件/抽屉、DrawHeader头部.dart](/flutter/17Draw抽屉组件/抽屉、DrawHeader头部.dart)
+
+  2. UserAccountsDrawerHeader头部组件
+     * [详细代码请看:/flutter/17Draw抽屉组件/抽屉、UserAccountsDrawerHeader头部.dart](/flutter/17Draw抽屉组件/抽屉、UserAccountsDrawerHeader头部.dart)
+
+  3. 抽屉中点击事件，跳转，使用onTap
+     * [详细代码请看:/flutter/17Draw抽屉组件/抽屉点击跳转/main.dart](/flutter/17Draw抽屉组件/抽屉点击跳转/main.dart.dart)
+
+  4. [详细文档请看:/flutter/17Draw抽屉组件/Flutter-Drawer侧边栏以及侧边栏内容布局.pdf](/flutter/17Draw抽屉组件/Flutter-Drawer侧边栏以及侧边栏内容布局.pdf)
+
+## 19. 按钮组件
+  1. RaisedButton：凸起的按钮，其实就是 Material Design 风格的 Button
+  2. FlatButton：扁平化的按钮
+  3. OutlineButton：线框按钮
+  4. IconButton：图标按钮
+  5. ButtonBar:按钮组
+  6. FloatingActionButton:浮动按钮
+
+  7. [详细代码请看:/flutter/18按钮组件/demo.dart](/flutter/18按钮组件/demo.dart)
+
+  8. 实现以下效果: ![底部浮动按钮](/flutter/18按钮组件/4.jpg)
+     * [详细代码请看:/flutter/18按钮组件/浮动按钮/main.dart](/flutter/18按钮组件/浮动按钮/main.dart)
+
+  9. [详细文档请看:/flutter/18按钮组件/Flutter-FloatingActionButton结合底部tab实现中间凸起按钮.pdf](/flutter/18按钮组件/Flutter-FloatingActionButton结合底部tab实现中间凸起按钮.pdf)
+
+  10. [详细文档请看:/flutter/18按钮组件/Flutter中的按钮组件.pdf](/flutter/18按钮组件/Flutter中的按钮组件.pdf)
+
+## 20. TextField表单组件、Checkbox复选框、Radio单选框
+  1. 布局，[详细代码请看:/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/demo.dart](/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/demo.dart)
+
+  2. 设置初始值以及修改, [详细代码请看:/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/表单的赋值和修改.dart](/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/表单的赋值和修改.dart)
+
+  3. checkbox布局和修改值, [详细代码请看:/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/checkbox.dart](/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/checkbox.dart)
+
+  4. CheckboxListTile,复选框列表，[详细代码请看:/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/CheckboxListTile.dart](/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/CheckboxListTile.dart)
+
+  5. Radio布局和修改值，[详细代码请看:/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/Radio.dart](/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/Radio.dart)
+
+  6. RadioListTile单选列表布局，[详细代码请看:/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/RadioListTile.dart](/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/RadioListTile.dart)
+
+  7. Switch开关组件，[详细代码请看:/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/Switch.dart](/flutter/19TextField表单组件、Checkbox复选框、Radio单选框/Switch.dart)
+
+  8. [详细文档请看:/flutter/19按钮组件/Flutter中的表单.pdf](/flutter/18按钮组件/Flutter中的表单.pdf)
+
+## 21. Flutter日期和时间戳、格式化日期库、Future异步、官方自带日期组件showDatePicker 时间组件showTimePicker 以及国际化
+  1. flutter日期间的相互转换
+     * 获取时间：DateTime.now();
+      ```
+        var now = DateTime.now();
+        print(now); // 获取当前时间  2020-02-22 18:51:27.642596
+      ```
+
+     * 时间转换为时间戳：DateTime.now().millisecondsSinceEpoch
+      ```
+        var now = DateTime.now();
+        print(now.millisecondsSinceEpoch); // 日期转换为时间戳  1582368687642
+      ```
+
+     * 时间戳转换为时间: DateTime.fromMillisecondsSinceEpoch()
+      ```
+        print(DateTime.fromMillisecondsSinceEpoch(1582368144393)); // 将时间戳转换为时间 2020-02-22 18:42:24.393
+      ```
+
+  2. 时间的转换
+     * 使用第三方库dateformat
+      1. 在pubspec.yaml中配置dateformat
+          ```
+            dependencies:
+              date_format: ^1.0.8
+          ```
+
+      2. 引入包并使用
+          ```
+            import 'package:date_format/date_format.dart';
+
+            print(formatDate(DateTime.now(), [yyyy, '-', mm, '-', dd]));
+          ```
+
+      3. [详细文档请看:https://pub.dev/packages/date_format](https://pub.dev/packages/date_format)
+
+      4. [详细代码请看:/flutter/20Flutter日期和时间戳、格式化日期库、Future异步、官方自带日期组件showDatePicker时间组件showTimePicker以及国际化/demo.dart](/flutter/20Flutter日期和时间戳、格式化日期库、Future异步、官方自带日期组件showDatePicker时间组件showTimePicker以及国际化/demo.dart)
+
+  3. flutter自带日期控件,包括修改值
+     * [详细代码请看:/flutter/20Flutter日期和时间戳、格式化日期库、Future异步、官方自带日期组件showDatePicker时间组件showTimePicker以及国际化/flutter自带日期控件/main.dart](/flutter/20Flutter日期和时间戳、格式化日期库、Future异步、官方自带日期组件showDatePicker时间组件showTimePicker以及国际化/flutter自带日期控件/main.dart)
+
+  4. flutter自带时间控件,包括修改值
+     * [详细代码请看:/flutter/20Flutter日期和时间戳、格式化日期库、Future异步、官方自带日期组件showDatePicker时间组件showTimePicker以及国际化/flutter自带时间控件/main.dart](/flutter/20Flutter日期和时间戳、格式化日期库、Future异步、官方自带日期组件showDatePicker时间组件showTimePicker以及国际化/flutter自带时间控件/main.dart)
+
+  5. flutter设置国际化
+     1. 配置flutter_localizations依赖
+        ```
+          找到pubspec.yaml配置flutter_localizations
+          dependencies:
+            flutter:
+              sdk: flutter
+            flutter_localizations:
+              sdk: flutter
+        ```
+
+      2. 导入国际化的包 flutter_localizations
+          ```
+            import 'package:flutter_localizations/flutter_localizations.dart'; 
+          ```
+
+      3. 设置国际化
+          ```
+            void main() {
+              runApp(
+                new MaterialApp(
+                  title: 'app',
+                  theme: new ThemeData(
+                    primaryColor: Colors.white,
+                  ),
+                  home: new MyLoginWidget(),
+                  localizationsDelegates: [
+                    //此处
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                  ],
+                  supportedLocales: [
+                    //此处
+                    const Locale('zh', 'CH'),
+                    const Locale('en', 'US'),
+                  ],
+                ),
+              );
+            }
+          ```
+
+      4. 要显示中文的控件设置
+          ```
+            _showDatePicker() async{
+              var date =await showDatePicker(
+                context: context,
+                initialDate: _datetime,
+                firstDate:DateTime(1900),
+                lastDate:DateTime(2050),
+                locale: Locale('zh'),    
+              );
+              if(date==null) return;
+              print(date);
+              setState(() {
+                _datetime=date;
+              });
+            }
+          ```
+
+      5. [详细文档请看:http://bbs.itying.com/topic/5cfb2a12f322340b2c90e764](http://bbs.itying.com/topic/5cfb2a12f322340b2c90e764)
+
+## 22. 第三方日期控件flutter_cupertino_date_picker
+  1. 第一步： 在pubspec.yaml配置flutter_cupertino_date_picker
+     ```
+      dependencies:
+        flutter_cupertino_date_picker: ^1.0.12
+     ```
+
+  2. 第二步：导入控件,在Home.dart中引入包
+     ```
+      import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
+     ```
+
+  3. 结合文档，写入代码：
+     ```
+      DatePicker.showDatePicker(
+        context,
+        pickerTheme: DateTimePickerTheme(
+          showTitle: _showTitle,
+          confirm: Text('确定', style: TextStyle(color: Colors.red)),
+          cancel: Text('取消', style: TextStyle(color: Colors.cyan)),
+        ),
+        minDateTime: DateTime.parse(minDate),
+        maxDateTime: DateTime.parse(maxDate),
+        initialDateTime: _dateTime,
+        dateFormat: _format,
+        locale: DateTimePickerLocale.zh_cn,
+        onClose: () => print("----- onClose -----"),
+        onCancel: () => print('onCancel'),
+        onChange: (dateTime, List<int> index) {
+          setState(() {
+            _dateTime = dateTime;
+          });
+        },
+        onConfirm: (dateTime, List<int> index) {
+          setState(() {
+            _dateTime = dateTime;
+          });
+        },
+      );
+     ```
+
+  4. [详细文档请看:https://pub.dev/packages/flutter_cupertino_date_picker](https://pub.dev/packages/flutter_cupertino_date_picker)
+  
+  5. [该控件的github地址:https://github.com/dylanwuzh/flutter-cupertino-date-picker](https://github.com/dylanwuzh/flutter-cupertino-date-picker)
+
+  6. [详细代码请看:/flutter/21第三方日期控件/main.dart](/flutter/21第三方日期控件/main.dart)
+     
+## 23. 第三方轮播图组件flutter-swiper
+  1. 第一步： 在pubspec.yaml配置flutter-swiper
+     ```
+      dependencies:
+        flutter_swiper: ^1.1.6
+     ```
+
+  2. 第二步：导入控件,在demo.dart中引入包
+     ```
+      import 'package:flutter_swiper/flutter_swiper.dart';
+     ```
+
+  3. 结合文档，写入代码：
+     ```
+        body: new Swiper(
+          itemBuilder: (BuildContext context,int index){
+            return new Image.network("http://via.placeholder.com/350x150",fit: BoxFit.fill,);
+          },
+          itemCount: 3,
+          pagination: new SwiperPagination(),
+          control: new SwiperControl(),
+        );
+     ```
+
+  4. [详细文档请看:https://pub.dev/packages/flutter_swiper](https://pub.dev/packages/flutter_swiper)
+
+  5. [详细代码请看:/flutter/22第三方轮播图组件/demo.dart](/flutter/22第三方轮播图组件/demo.dart)
