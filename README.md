@@ -677,3 +677,43 @@
   4. [详细文档请看:https://pub.dev/packages/flutter_swiper](https://pub.dev/packages/flutter_swiper)
 
   5. [详细代码请看:/flutter/22第三方轮播图组件/demo.dart](/flutter/22第三方轮播图组件/demo.dart)
+
+## 24. 弹窗组件AlertDialog、SimpleDialog、showModalBottomSheet、flutter-toast第三方库
+  1. AlertDialog
+  2. SimpleDialog
+  3. showModalBottomSheet
+  4. flutter-toast
+  5. [详细代码请看:/flutter/23弹窗组件AlertDialog、SimpleDialog、showModalBottomSheet、flutter-toast第三方库/main.dart](/flutter/23弹窗组件AlertDialog、SimpleDialog、showModalBottomSheet、flutter-toast第三方库/main.dart)
+
+## 25. 自定义弹窗
+  1. 其实就是继承Dialog类
+
+  2. 设置定时器Timer.periodic，使用前需要引入 import 'dart:async';
+
+  3. [详细代码请看:/flutter/24自定义弹窗、定时器/main.dart](/flutter/24自定义弹窗、定时器/main.dart)
+
+## 26. 使用http库get、post获取数据
+  1. Map与json之间的转换
+     * Map转换为json,使用json.encode(data)
+        ```
+          import 'dart:convert';
+
+          var mapData = {"name": "张三", "age": "20"}
+          var strData = '{"name": "张三", "age": "20"}'
+          print(json.encode(mapData))
+        ```
+
+     * json转换为Map,使用json.decode(data)
+        ```
+          import 'dart:convert';
+
+          var mapData = {"name": "张三", "age": "20"}
+          var strData = '{"name": "张三", "age": "20"}'
+          print(json.decode(strData))
+        ```
+
+  2. http库get获取数据
+     * [详细代码请看:/flutter/25使用http库get、post获取数据/get.dart](/flutter/25使用http库get、post获取数据/get.dart)
+
+  3. http库post获取数据
+     * [详细代码请看:/flutter/25使用http库get、post获取数据/post.dart](/flutter/25使用http库get、post获取数据/post.dart)
