@@ -829,6 +829,8 @@
 
   * [详细代码请看:/flutter/28保持页面状态/main.dart](/flutter/28保持页面状态/main.dart)
 
+## 29. 使用flutter-swiper制作引导页
+   * [详细代码请看:/flutter/29引导页/main.dart](/flutter/29引导页/main.dart)
 
 
 # flutter打包成APK
