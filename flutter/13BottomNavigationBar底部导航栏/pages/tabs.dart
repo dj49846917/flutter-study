@@ -11,6 +11,21 @@ class Tabs extends StatefulWidget {
 }
 
 class _TabsState extends State<Tabs> {
+  final List<BottomNavigationBarItem> bottomTabs = [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        title: Text('首页')
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.category),
+        title: Text('分类')
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.settings),
+        title: Text('设置')
+      ),
+    ];
+
   int _count = 0;
   List _arr = [ HomePage(), CategoryPage(), SettingPage() ];
   @override
@@ -28,24 +43,7 @@ class _TabsState extends State<Tabs> {
               this._count = index;
             });
           },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text('首页')
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              title: Text('分类')
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              title: Text('设置')
-            ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.my_location),
-            //   title: Text('我的')
-            // )
-          ]
+          items: bottomTabs
         ),
       );
   }

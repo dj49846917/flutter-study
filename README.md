@@ -717,3 +717,173 @@
 
   3. http库post获取数据
      * [详细代码请看:/flutter/25使用http库get、post获取数据/post.dart](/flutter/25使用http库get、post获取数据/post.dart)
+
+## 27. flutter状态管理库Provide
+  1. 下载安装provide
+     ```
+      dependencies:
+        provide: ^1.0.2
+     ```
+
+  2. 引入
+     ```
+      import 'package:provide/provide.dart';
+     ```
+
+  3. 创建provide
+     ```
+      新建一个provide文件夹，然后再里边新建一个demo.dart 文件.代码如下:
+        import 'package:flutter/material.dart';
+
+        class Demo with ChangeNotifier{
+          int count = 0;
+
+          add() {
+            count ++;
+            notifyListeners(); // 通知相关组件，内容改了
+          }
+        }
+     ```
+
+  4. 将状态放到最顶层main.dart中
+     ```
+      import 'package:provide/provide.dart';
+      import './provide/counter.dart';
+
+      void main(){
+        var demo = Demo();
+        var providers = Providers();
+        providers..provide(Provider<Demo>.value(demo));
+        runApp(
+          ProviderNode(child: MyApp(), providers: providers)
+        );
+      }
+     ```
+
+  5. 在category/index.dart中获取状态,使用Provide的builder方法
+     ```
+      class Number extends StatelessWidget {
+        @override
+        Widget build(BuildContext context) {
+          return Container(
+            margin: EdgeInsets.only(top: 200),
+            child: Provide<Demo>(
+              builder: (context, child, item){
+                return Text('${item.count}');
+              }
+            )
+          );
+        }
+      }
+     ```
+
+  6. 修改状态,使用provide的value方法调用写好的add
+      ```
+        class MyButton extends StatelessWidget {
+          @override
+          Widget build(BuildContext context) {
+            return Container(
+              child: RaisedButton(
+                onPressed: (){
+                  Provide.value<Demo>(context).add();
+                },
+                child: Text('递增'),
+              ),
+            );
+          }
+        }
+      ```
+
+  7. [详细代码请看:/flutter/27flutter状态管理Provide/main.dart](/flutter/27flutter状态管理Provide/main.dart)
+
+## 28. 保持页面状态
+  * AutomaticKeepAliveClientMixin这个Mixin就是Flutter为了保持页面设置的。哪个页面需要保持页面状态，就在这个页面进行混入。
+
+  * 使用条件：   
+    1. 使用的页面必须是StatefulWidget,如果是StatelessWidget是没办法办法使用的。
+    2. 其实只有两个前置组件才能保持页面状态：PageView和IndexedStack。
+    3. 重写wantKeepAlive方法，如果不重写也是实现不了的。
+
+  * 使用步骤：
+    1. 需求是记住首页的状态，不要让他每次切换都调接口，在home/index.dart中
+        ```
+          混入AutomaticKeepAliveClientMixin，重写wantKeepAlive方法
+
+          class HomePage extends StatefulWidget {
+            @override
+            _HomePageState createState() => _HomePageState();
+          }
+
+          class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
+              @override
+            bool get wantKeepAlive => true;
+        ```
+
+    2. 在他的上层通过IndexedStack包裹起来(pages/index_page.dart)
+        ```
+          body: IndexedStack(
+            index: currentIndex,
+            children: tabBodies,
+          ),
+        ```
+
+  * [详细代码请看:/flutter/28保持页面状态/main.dart](/flutter/28保持页面状态/main.dart)
+
+
+
+# flutter打包成APK
+  1. 配置APP的图标
+      * 想配置APP的图片，你需要找到下面的目录：项目根目录/android/app/src/main/res/,进去之后，会看到mipmap-hdpi、mipmap-mdpi、mipmap-xhdpi、mipmap-xxhdpi、mipmap-xxxhdpi这5个文件夹，将你的图标放进去，注意图标的名称必须相同
+
+      * 找到/android/app/src/main/AndroidManifest.xml文件，可以配置APP的名称、图标
+        ```
+          android:label="flutter_app"   //配置APP的名称，支持中文
+          android:icon="@mipmap/ic_launcher" //APP图标的文件名称
+        ```
+
+  2. 生成keystore
+      * 在项目当前目录下输入命令： keytool -genkey -v -keystore C:/Users/ASUS/Desktop/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
+  3. 在Android文件夹下，新建key.properties，并写入前面的密码
+        ```
+          storePassword=123123
+          keyPassword=123123
+          keyAlias=key
+          storeFile=C:/Users/ASUS/Desktop/key.jks
+        ```
+
+  4. 找到android/app/build.gradle文件，修改此文件
+      * ![修改1](/flutter/26flutter打包成apk/1.jpg)
+      * ![修改2](/flutter/26flutter打包成apk/2.jpg)
+
+  5. 以上都搞定之后，执行flutter build apk
+
+  6. 如果打包成功了，会在build/app/outputs/apk/release文件夹下，生成app-release.apk，然后在当前目录下执行flutter install就打包完成
+
+  7. [详细文档请看:https://jspang.com/detailed?id=44#toc324](https://jspang.com/detailed?id=44#toc324)
+
+  8. [详细文档请看:https://blog.csdn.net/duo_shine/article/details/81382757](https://blog.csdn.net/duo_shine/article/details/81382757)
+
+# flutter适配不同设备尺寸
+  * 使用插件：flutter_screenutil
+     * 下载：
+        ```
+        在pubslipec.yaml里：
+
+          dependencies:
+            flutter_screenutil: ^1.0.2
+        ```
+
+     * 引入：
+        ```
+          import 'package:flutter_screenutil/flutter_screenutil.dart';
+        ```
+
+     * 使用：
+        ```
+          1.在根组件初始化设计尺寸：ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: true);
+
+          2. 在需要的地方，使用setHeight(), setWisth()设置宽高
+          height: ScreenUtil().setHeight(333),
+        ```
+        
