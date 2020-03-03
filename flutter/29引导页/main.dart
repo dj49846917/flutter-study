@@ -58,7 +58,11 @@ class HomePage extends StatelessWidget {
           return Image.asset(arr[index], fit: BoxFit.fill);
         },
         itemCount: arr.length,
-        pagination: new SwiperPagination(),
+        pagination: new SwiperPagination(
+          builder: DotSwiperPaginationBuilder(
+            activeColor: Color.fromRGBO(254, 111, 3, 1) // 设置圆点选中的颜色
+          )
+        ),
         // control: new SwiperControl(),
         loop: false,
       ),
