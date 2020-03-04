@@ -889,3 +889,60 @@
           height: ScreenUtil().setHeight(333),
         ```
         
+
+
+
+
+# 日常开发经验总结
+## 1. appBar部分
+  1. **如何去掉appBar的底部阴影**
+    ![如何去掉appBar的底部阴影](/flutter/经验积累/appbar去掉底部阴影.jpg)
+    ```
+      elevation: 0 加上这个属性就可以去掉底部的阴影
+
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text('我的'),
+            backgroundColor: Colors.deepOrange,
+            elevation: 0, //去掉Appbar底部阴影
+          ),
+          body: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[MineHead()],
+              )
+            ],
+          ));
+      }
+    ```
+
+  2. **如何给appbar添加颜色渐变**
+    ```
+      使用flexibleSpace属性
+      appBar: AppBar(
+        flexibleSpace: Container(
+          // 设置渐变色
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Color.fromRGBO(253, 99, 52, 1),
+            Color.fromRGBO(253, 52, 52, 1)
+          ])),
+        ),
+      )
+    ```
+
+  3. **实现以下布局**
+      * ![导航不在appBar](/flutter/经验积累/导航不在appBar.jpg)
+      ```
+        # 布局思路
+          * appBar是第一行，搜索框放到body里的，tabbar和tabbarView都在body里，而不是在appBar里
+
+        # 注意
+          TabBarView必须要求高度要确定，结合Expanded组件一起使用，不然会报错
+
+        # 导航有滚动是设置isScrollable: true,
+      ```
+
+      * [详细代码请看:/flutter/布局例子/tabBar不在在body中的选项卡/index.dart](/flutter/布局例子/tabBar不在在body中的选项卡/index.dart)
