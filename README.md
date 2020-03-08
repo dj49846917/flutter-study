@@ -832,6 +832,117 @@
 ## 29. 使用flutter-swiper制作引导页
    * [详细代码请看:/flutter/29引导页/main.dart](/flutter/29引导页/main.dart)
 
+## 30. Provider状态管理
+  * 使用Provider状态管理，类似于vuex和redux
+  
+  * 使用步骤：
+      1. 在pubspec.yaml中下载provide
+          ```
+            dependencies:
+              provide: ^1.0.2
+          ```
+
+      2. 新建provider文件夹，新建home.dart,写入以下代码：
+          ```
+            import 'package:flutter/material.dart';
+
+            class HomeData with ChangeNotifier {
+              Map dataSource = {};
+
+              getHomeData(data){
+                dataSource = data;
+                notifyListeners();
+              }
+            }
+          ```
+
+      3. 在根目录main.dart下，注册Provider
+        ```
+          import 'package:provide/provide.dart';
+          import 'package:app/provide/home.dart';
+
+          void main(){
+            var home =HomeData();
+            var providers  = Providers();
+            providers
+              ..provide(Provider<HomeData>.value(home));
+            runApp(ProviderNode(child:Myapp(),providers:providers));
+          }
+        ```
+
+      4. 获取Provier里的值：使用Provide.value方法
+          ```
+            import 'package:provide/provide.dart';
+            import 'package:app/provide/home.dart';
+
+            Provide.value<HomeData>(context).dataSource['tabs'][0]['info']['tooltip'];
+          ```
+
+      5. 修改provider里的值：还是使用Provide.value方法
+           ```
+            import 'package:provide/provide.dart';
+            import 'package:app/provide/home.dart';
+
+            Provide.value<HomeData>(context).getHomeData(snapshot.data['data']); // 给provide赋值
+          ```
+      6. [详细代码请看:/flutter/30Provider状态管理/main.dart](/flutter/30Provider状态管理/main.dart)
+
+## 31. flutter下拉刷新上拉加载easyRefresh
+  1. 下载flutter_easyrefresh和flutter_localizations
+      ```
+        dependencies:
+          flutter:
+            sdk: flutter
+          flutter_localizations:
+            sdk: flutter
+
+          flutter_easyrefresh: ^2.0.9
+      ```
+
+  2. 在页面中引入包
+      ```
+        import 'package:flutter_easyrefresh/easy_refresh.dart';
+      ```
+
+  3. 使用步骤：
+      ```
+      1. 定义控制器变量
+        EasyRefreshController _controller;
+
+      2. 初始化
+        void initState() {
+          super.initState();
+          _controller = EasyRefreshController(); // 初始化控制器
+        }
+
+      3. 使用EasyRefresh()包裹你的列表,设置onLoad和onRefresh方法即可
+      ```
+
+  4. 国际化：
+      ```
+        在根路径main.dart中，引入：
+
+        import 'package:flutter_easyrefresh/easy_refresh.dart';
+        import 'package:flutter_localizations/flutter_localizations.dart';
+
+        加入以下代码即可：
+        localizationsDelegates: [
+          GlobalEasyRefreshLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
+        supportedLocales: [
+          Locale('zh', 'CN'),
+        ],
+      ```
+  
+  5. [详细代码请看:/flutter/31flutter下拉刷新上拉加载easyRefresh/index.dart](/flutter/31flutter下拉刷新上拉加载easyRefresh/index.dart)
+
+  6. [详细代码请看:/flutter/31flutter下拉刷新上拉加载easyRefresh/main.dart](/flutter/31flutter下拉刷新上拉加载easyRefresh/main.dart)
+
+  7. [详细文档请看:https://github.com/xuelongqy/flutter_easyrefresh](https://github.com/xuelongqy/flutter_easyrefresh)
+
 
 # flutter打包成APK
   1. 配置APP的图标
@@ -946,3 +1057,59 @@
       ```
 
       * [详细代码请看:/flutter/布局例子/tabBar不在在body中的选项卡/index.dart](/flutter/布局例子/tabBar不在在body中的选项卡/index.dart)
+
+  4. **tabBar的动态渲染及循环**  
+      * 注意：   
+        1. 使用FutureBuilder异步渲染组件的时候，不能在组件或者build中使用setState会报错
+
+        2. 在获取到tab的数据后，他是个数组，循环只能用for循环，不能用map，因为数据返回的数组不是List<Map>，而是List<dymanic>
+
+        3. 使用FutureBuilder的时候，tabBar的tabController不要定义在initState中,而是把它定义在FutureBuilder中
+
+        ```
+          body: FutureBuilder(
+            future: request('home', 'post'), 
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                // 处理数据
+                var tabsArr = snapshot.data['data']['tabs']; // 类型不是List<Map>，是List<dynamic>
+                // 初始化tabBar的控制
+                _tabController = new TabController(length: tabsArr.length, vsync: this);
+                _tabController.addListener(() {
+                  print(_tabController.index);
+                });
+
+                return Column(
+                    children: <Widget>[
+                      SearchComponent(),
+                      Container(
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(colors: [
+                          Color.fromRGBO(253, 99, 52, 1),
+                          Color.fromRGBO(253, 52, 52, 1)
+                        ])),
+                        child: TabBar(
+                            isScrollable: true,
+                            controller: _tabController,
+                            tabs: this._getTabsData(tabsArr)),
+                      ),
+
+          // 渲染tab
+          _getTabsData(tabsArr) {
+            List<Widget> list = new List();
+            for(int i=0; i<tabsArr.length;i++) { // 只能用for循环
+              list.add(Tab(text: tabsArr[i]['title']));
+            }
+            print(list);
+            return list;
+          }
+        ```
+
+      * [详细代码请看:/flutter/布局例子/tabBar的动态渲染及循环、FutureBulder的用法/main.dart](/flutter/布局例子/tabBar的动态渲染及循环、FutureBulder的用法/main.dart)
+
+  5. **实现以下布局**
+      * ![一行两列的列表](/flutter/经验积累/一行多列的列表用wrap不要用gridView.jpg)
+
+      * 注意：一行多列的布局，要使用wrap流式布局，而不是GridView，原因是GridView要指定高度，这样滚动区域就只能在这个高度中
+
+      
